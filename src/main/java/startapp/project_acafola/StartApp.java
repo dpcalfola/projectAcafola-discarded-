@@ -13,7 +13,7 @@ public class StartApp extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        testConnection.testConnect();
+//        testConnection.testConnect();
 
         FXMLLoader root = new FXMLLoader(StartApp.class.getResource("login-view.fxml"));
         Scene scene = new Scene(root.load());
@@ -24,10 +24,6 @@ public class StartApp extends Application {
     }
 
     public static void main(String[] args) {
-
-
-
-
         launch();
     }
 }

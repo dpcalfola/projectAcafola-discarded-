@@ -3,10 +3,13 @@ package databaseClass.testConnection;
 import java.util.ArrayList;
 
 public class testConnection {
-    public static void testConnect(){
 
-        testConnectionDAO dao = new testConnectionDAO();
-        ArrayList<testConnectionVO> list = dao.testConnectList();
+    testConnectionDAO dao = new testConnectionDAO();
+    ArrayList<testConnectionVO> list = dao.testConnectList();
+
+    public void testConnect(){
+
+
 
         for (int i = 0; i < list.size(); i++) {
             testConnectionVO data = list.get(i);

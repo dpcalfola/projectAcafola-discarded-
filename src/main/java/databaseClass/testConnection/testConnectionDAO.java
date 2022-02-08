@@ -1,5 +1,7 @@
 package databaseClass.testConnection;
 
+import databaseClass.ConnDB;
+
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
