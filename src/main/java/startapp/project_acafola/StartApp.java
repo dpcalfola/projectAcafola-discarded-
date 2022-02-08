@@ -16,10 +16,11 @@ public class StartApp extends Application {
         testConnection.testConnect();
 
         FXMLLoader root = new FXMLLoader(StartApp.class.getResource("login-view.fxml"));
-        Scene scene = new Scene(root.load(), 1280, 720);
+        Scene scene = new Scene(root.load());
         primaryStage.setTitle("AcaFola");
         primaryStage.setScene(scene);
         primaryStage.show();
+
     }
 
     public static void main(String[] args) {
