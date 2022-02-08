@@ -1,21 +1,11 @@
 package databaseClass.testConnection;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 public class testConnectionDAO {
 
 
-    String url = "jdbc:mysql://localhost:3306/project_Acafola";
-//    String url = "jdbc:mysql://localhost:3306/EZEN";
-    String user = "fola";
-    String password = "123456789";
-
-    private Connection conn;
-    private Statement statement;
     private ResultSet resultSet;
 
 
@@ -23,9 +13,12 @@ public class testConnectionDAO {
         ArrayList<testConnectionVO> list = new ArrayList<>();
 
         try {
-            connDB();
+            ConnDB testconn = new ConnDB();
+            testconn.connDB();
+
+
             String query = "SELECT * FROM test";
-            resultSet = statement.executeQuery(query);
+            resultSet = testconn.getStatement().executeQuery(query);
 
             while (resultSet.next()) {
                 int testId = resultSet.getInt("test_id");
@@ -43,16 +36,5 @@ public class testConnectionDAO {
         return list;
     }
 
-
-    public void connDB() {
-        try {
-            conn = DriverManager.getConnection(url, user, password);
-            System.out.println("Connected with MySQL database successfully");
-            statement = conn.createStatement();
-            System.out.println("Created Statement Successfully");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
 }

@@ -14,7 +14,9 @@ public class ConnDB {
     private Connection conn;
     private Statement statement;
 
-
+    public Statement getStatement() {
+        return statement;
+    }
 
     public void connDB() {
         try {
