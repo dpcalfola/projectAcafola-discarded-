@@ -7,9 +7,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import databaseClass.testConnection.testConnection;
+
 public class StartApp extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
+
+        testConnection.testConnect();
+
         FXMLLoader root = new FXMLLoader(StartApp.class.getResource("login-view.fxml"));
         Scene scene = new Scene(root.load(), 1280, 720);
         primaryStage.setTitle("AcaFola");
@@ -18,6 +23,10 @@ public class StartApp extends Application {
     }
 
     public static void main(String[] args) {
+
+
+
+
         launch();
     }
 }
