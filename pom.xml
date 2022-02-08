@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>acafola</groupId>
+    <groupId>startApp</groupId>
     <artifactId>project_Acafola</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>project_Acafola</name>
@@ -60,7 +60,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>acafola.project_acafola/acafola.Main</mainClass>
+                            <mainClass>startapp.project_acafola/startapp.project_acafola.StartApp</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
