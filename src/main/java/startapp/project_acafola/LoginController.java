@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.IDN;
@@ -25,12 +26,18 @@ public class LoginController implements Initializable {
     private TextField textFieldLoginID;
     @FXML
     private PasswordField passwordFieldLoginPW;
+    @FXML
+    private Text textGreetingMessage;
 
 
     @FXML
     private void handleLoginButtonAction(ActionEvent event) throws IOException {
         System.out.println("LoginButton Clicked!!");
+        checkUpIdentification();
+    }
 
+
+    private void checkUpIdentification() {
 
         // get text field data
         String getID = textFieldLoginID.getText();
@@ -49,14 +56,16 @@ public class LoginController implements Initializable {
         System.out.println("DB userID: " + userID);
         System.out.println("DB userPW: " + userPW);
 
+        // check up
         if (getID.equals(userID) && getPW.equals(userPW)){
             System.out.println("Login Successfully");
+            textGreetingMessage.setText("Hello " + userID);
         }else {
             System.out.println("Incorrect User Information");
+            textGreetingMessage.setText("Incorrect User Information");
         }
-
-
     }
+
 
 
     @Override
